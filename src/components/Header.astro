@@ -26,18 +26,18 @@ const allPages = [
     </a>
     
     <nav class="hidden md:flex items-center space-x-8">
-      <a href="/" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Home</a>
-      <a href="/features" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Features</a>
-      <a href="/pricing" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Pricing</a>
-      <a href="/blog" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Blog</a>
-      <a href="/contact" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors">Contact</a>
+      <a href="/" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-blue-400 font-medium transition-colors">Home</a>
+      <a href="/features" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-blue-400 font-medium transition-colors">Features</a>
+      <a href="/pricing" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-blue-400 font-medium transition-colors">Pricing</a>
+      <a href="/blog" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-blue-400 font-medium transition-colors">Blog</a>
+      <a href="/contact" class="text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-blue-400 font-medium transition-colors">Contact</a>
       
       <!-- All Pages Dropdown -->
       <div x-data="{ open: false }" class="relative">
         <button 
           @click="open = !open" 
           @click.away="open = false"
-          class="flex items-center text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-primary-400 font-medium transition-colors"
+          class="flex items-center text-secondary-600 hover:text-primary-600 dark:text-secondary-300 dark:hover:text-blue-400 font-medium transition-colors"
         >
           All Pages
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -81,7 +81,7 @@ const allPages = [
         </svg>
       </button>
       
-      <a href="#signup" class="hidden sm:inline-flex btn-primary">Get Started</a>
+      <a href="/contact" class="hidden sm:inline-flex btn-primary">Get Started</a>
       
       <!-- Mobile Menu Button and Dropdown -->
       <div x-data="{ open: false, showAllPages: false }">
