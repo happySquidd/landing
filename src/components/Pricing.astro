@@ -1,75 +1,84 @@
 ---
 const plans = [
   {
-    name: "Starter",
-    price: 29,
-    description: "Perfect for small teams and startups",
+    name: "Basic",
+    price: 99,
+    description: "For basic website needs",
     features: [
-      "Up to 5 team members",
-      "10GB storage",
-      "Basic analytics",
+      "One page website",
+      "Custom business domain",
+      "Secure hosting",
+      "Monthly analytics",
       "24/7 email support",
-      "API access"
+      "Unlimited minor changes"
     ],
-    cta: "Start Free Trial",
+    cta: "Start Your Plan",
     popular: false,
-    color: "primary"
+    color: "secondary",
+    link: "/"
+  },
+  {
+    name: "Standard",
+    price: 149,
+    description: "Ideal for growing businesses",
+    features: [
+      "Multi page website",
+      "Custom business domain",
+      "Secure hosting",
+      "Monthly analytics",
+      "24/7 email support",
+      "Unlimited minor changes",
+      "Up to 4 major changes / month",
+      "Contact form for leads",
+      "SEO integrated"
+    ],
+    cta: "Start Your Plan",
+    popular: true,
+    color: "blue",
+    link: "/"
   },
   {
     name: "Professional",
-    price: 79,
-    description: "Ideal for growing businesses",
+    price: 299,
+    description: "For large businesses",
     features: [
-      "Up to 20 team members",
-      "50GB storage",
-      "Advanced analytics",
-      "Priority support",
-      "API access",
-      "Custom integrations",
-      "Team collaboration tools"
+      "Multi page website",
+      "Custom business domain",
+      "Secure hosting",
+      "Monthly analytics",
+      "24/7 priority email support",
+      "Unlimited minor changes",
+      "Up to 12 major changes / month",
+      "Contact form for leads",
+      "SEO integrated",
+      "Social media links",
+      "Advanced security and compliance"
     ],
-    cta: "Start Free Trial",
-    popular: true,
-    color: "secondary"
-  },
-  {
-    name: "Enterprise",
-    price: 199,
-    description: "For large organizations with complex needs",
-    features: [
-      "Unlimited team members",
-      "500GB storage",
-      "Enterprise analytics",
-      "Dedicated account manager",
-      "API access",
-      "Custom integrations",
-      "Team collaboration tools",
-      "Advanced security features",
-      "Custom branding"
-    ],
-    cta: "Contact Sales",
+    cta: "Start Your Plan",
     popular: false,
-    color: "accent"
+    color: "accent",
+    link: "/"
   }
 ];
 ---
 
-<section id="pricing" class="section bg-gray-50 dark:bg-gray-800/50">
+<section id="pricing" class="section ">
   <div class="container-custom">
-    <div class="text-center max-w-3xl mx-auto mb-16">
+    <div class="text-center max-w-4xl mx-auto mb-16">
       <span class="inline-block px-4 py-1 rounded-full bg-accent-100 dark:bg-accent-900 text-accent-600 dark:text-accent-300 font-medium text-sm mb-4">
         Pricing Plans
       </span>
       <h2 class="mb-6 text-gray-900 dark:text-white">Simple, Transparent Pricing</h2>
       <p class="text-gray-600 dark:text-gray-300">
-        Choose the plan that works best for your business. All plans include a 14-day free trial.
+        Choose the plan that works best for your business. <s>All plans include one-time $199 onboarding fee</s>
       </p>
+      <p><b>End of Summer Deal: No Onboarding Fee This Month Only</b></p>
     </div>
     
     <div class="grid md:grid-cols-3 gap-8">
       {plans.map((plan, index) => (
         <div 
-          class={`card p-6 border ${plan.popular ? `border-${plan.color}-500 dark:border-${plan.color}-400` : 'border-gray-200 dark:border-gray-700'} slide-up relative`}
+          class={`card p-6 border flex flex-col ${plan.popular ? `border-${plan.color}-500 dark:border-gray-400` : 'border-gray-200 dark:border-gray-700'} slide-up relative`}
           style={`animation-delay: ${index * 150}ms`}
         >
           {plan.popular && (
@@ -97,18 +106,20 @@ const plans = [
           </ul>
           
           <a 
-            href="#signup" 
-            class={`w-full btn ${plan.popular ? `bg-${plan.color}-600 hover:bg-${plan.color}-700 text-white focus:ring-${plan.color}-500` : 'btn-outline'}`}
+            href={plan.link}
+            class={`w-full btn mt-auto btn-outline`}
           >
             {plan.cta}
           </a>
         </div>
       ))}
     </div>
-    
     <div class="mt-12 text-center">
-      <p class="text-gray-600 dark:text-gray-300 mb-2">Need a custom plan for your specific needs?</p>
-      <a href="/contact" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">Contact our sales team</a>
+      <p class="text-gray-600 dark:text-gray-300 mb-2">Have questions? Feel free to reach out</p>
+      <a href="/contact" class="text-primary-600 dark:text-primary-400 font-medium hover:underline">Contact us</a>
     </div>
+    <!-- <div class="mt-12 text-center">
+      <p class="text-gray-300 mb-2">All plans include one month free hosting, with the $199 onboarding fee</p>
+    </div> -->
   </div>
 </section>
